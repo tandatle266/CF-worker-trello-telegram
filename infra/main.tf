@@ -73,7 +73,7 @@ resource "null_resource" "set_webhook" {
   provisioner "local-exec" {
     command = <<EOT
 curl -s -X POST \
-"https://api.telegram.org/bot${var.telegram_token}/setWebhook?url=https://${cloudflare_worker_script.telegram_trello_worker.name}.dat-le2.workers.dev"
+"https://api.telegram.org/bot${var.telegram_token}/setWebhook?url=https://${cloudflare_worker_script.telegram_trello_worker.name}.${var.cloudflare_account_id}.workers.dev"
 EOT
   }
 
