@@ -26,12 +26,13 @@ resource "cloudflare_worker_script" "telegram_trello_worker" {
   compatibility_date  = "2024-01-01"
   compatibility_flags = ["nodejs_compat"]
 
-  lifecycle {
-    ignore_changes = [
-      tags,
-      compatibility_flags,
-    ]
-  }
+  # Nếu update
+  #lifecycle {
+  #  ignore_changes = [
+  #    tags,
+  #    compatibility_flags,
+  #  ]
+  #}
 }
 
 

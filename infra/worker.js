@@ -1,6 +1,8 @@
-addEventListener("fetch", event => {
-    event.respondWith(handle(event.request));
-});
+export default {
+    async fetch(request, env, ctx) {
+        return handle(request, env, ctx);
+    }
+}
 
 async function handle(request) {
     try {
